@@ -160,6 +160,10 @@ i{
     padding: 10px;
 }
 
+.nav-icon.deative{
+  color: #999;
+}
+
 .nav-icon.checked{
     display: none;
     font-size: 10px;
@@ -187,7 +191,7 @@ i{
 .canvas {
   position: absolute;
   top: 60px;
-  left: 220px;
+  left: 180px;
   border: dashed 0.5px #999da0;
 }
 
@@ -195,9 +199,16 @@ i{
   background-color: transparent;
 }
 
+
 #canvas-container {
+  clear: both;
   height: 640px;
+  top: 60px;
+  left: 180px;
+  overflow: scroll;
 }
+
+
 
 .toolsbar-container {
   display: grid;

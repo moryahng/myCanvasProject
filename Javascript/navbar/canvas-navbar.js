@@ -54,6 +54,3 @@ $("#dimension-input" ).submit(function(event) {
     $("#label-colour-border").css("display", "none");
   })
 
-  /*$("").prop( "checked", true )(function (event){
-    $("body").css("background-image", `url(./Images/grid-background-dark.png)"`);
-  })*/

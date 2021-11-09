@@ -9,6 +9,9 @@
  let contextDraft = canvasDraft.getContext("2d");
  let currentFunction;
  let dragging = false;
+ let step = -1;
+ let userhistory = []; 
+
  
  $("#canvas-draft").mousedown(function (e) {
    let mouseX = e.offsetX;

@@ -4,13 +4,16 @@
  * This class extends the PaintFunction class, which you can find in canvas-common
  * Remember, order matters
  ***********************************************/
- class DrawingLine extends PaintFunction {
+
+
+class DrawingLine extends PaintFunction {
     // This class extends the PaintFunction class
     // You are only passing one instance here
   
     constructor(contextReal) {
       super();
       this.context = contextReal;
+      
     }
   
     // On mouse down, ensure that the pen has these features
@@ -31,7 +34,16 @@
     }
   
     onMouseMove() {}
-    onMouseUp() {}
+    onMouseUp() {      
+      step++;
+      if (step < userhistory.length - 1) {
+          userhistory.length = step + 1
+      }
+      userhistory.push(canvasReal.toDataURL()); //當前影像存成 Base64 編碼的字串並放入陣列
+  console.log(step)
+  console.log(userhistory)
+  
+    }
     onMouseLeave() {}
     onMouseEnter() {}
   
