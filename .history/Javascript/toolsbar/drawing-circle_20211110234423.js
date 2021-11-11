@@ -18,7 +18,7 @@ class DrawingCircle extends PaintFunction {
             let pointX = coord[0] - this.origX;
             let pointY = coord[1] - this.origY;
             let radius = Math.sqrt(pointX ** 2 + pointY ** 2);
-
+            
         this.contextDraft.beginPath();
         this.contextDraft.arc(this.origX,this.origY, radius, 0, Math.PI * 2);
         this.contextDraft.fill();
@@ -28,7 +28,7 @@ class DrawingCircle extends PaintFunction {
   
    
     onMouseUp(coord) {
-        this.contextDraft.clearRect(0,0, canvasDraft.width, canvasDraft.height);
+        this.contextReal.clearRect(0,0, canvasDraft.width, canvasDraft.height);
             let pointX = coord[0] - this.origX;
             let pointY = coord[1] - this.origY;
             let radius = Math.sqrt(pointX ** 2 + pointY ** 2);

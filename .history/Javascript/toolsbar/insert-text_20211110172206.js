@@ -2,16 +2,13 @@ class InsertText extends PaintFunction {
     constructor(contextReal, contextDraft) {
       super();
       this.contextReal = contextReal;
-      var hasInput = false; 
+      this.contextDraft = contextDraft;
     }
     onMouseDown(coord, event) {
-        var font = "12px sans-serif",
-       
+        this.contextReal.fillStyle = $("#primary-colour").val();
         this.contextReal.fillText = $("#primary-colour").val();
-        if (hasInput) return;
-        addInput(
         this.origX = coord[0];
-        this.origY = coord[1];)
+        this.origY = coord[1];
       }
 
      

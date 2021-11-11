@@ -303,13 +303,14 @@ input:checked + .toggleslider:before {
 }
 
 /* pris added */
+
 /* selection change color */
 
 .toolsbar-item:hover{
   background: white;
 }
 
-.toolsbar-item:active{
+.toolsbar-item:hover{
   background: white;
 }
 

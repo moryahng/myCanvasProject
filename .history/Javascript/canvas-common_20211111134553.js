@@ -62,3 +62,10 @@
  }
  
 
+ /* pris added */
+/* selection change color */
+
+$(".toolsbar-item").click(function(){
+  $(".toolsbar-item").removeClass('active');
+  $(this).toggleClass('active');
+})

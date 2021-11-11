@@ -303,11 +303,8 @@ input:checked + .toggleslider:before {
 }
 
 /* pris added */
-/* selection change color */
 
-.toolsbar-item:hover{
-  background: white;
-}
+/* selection change color */
 
 .toolsbar-item:active{
   background: white;

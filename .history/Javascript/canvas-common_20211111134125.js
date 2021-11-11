@@ -62,3 +62,9 @@
  }
  
 
+ /* pris added */
+/* selection change color */
+
+$("#my_styles .btn").click(function(){
+  $("#my_styles .btn").removeClass('active');
+  $(this).toggleClass('active');

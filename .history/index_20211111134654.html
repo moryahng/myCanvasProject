@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Canvas</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nav-bar">
+            <div id="description"> 
+            <label id="label-undo" for="undo">Undo</label>
+            <label id="label-redo"for="redo">Redo</label>
+            <label id="label-colour-fill" for="pri-color">Fill</label>
+            <label id="label-colour-border"for="sec-color">Border</label>
+
+        </div>
+        
+        <div class="nav-items-container">
+            <div class="nav-icon"><i class="fas fa-plus"></i></div>
+            <div class="nav-icon"id="undo-btn"><i class="fas fa-undo-alt"></i></div>
+            <div class="nav-icon"><i class="fas fa-redo-alt"></i></div>
+            <div class="nav-icon"><i class="fas fa-search-plus"></i></div>
+            <div class="nav-icon"><i class="fas fa-search-minus"></i></div>
+            <div class="nav-icon deative"><i class="far fa-object-group"></i></div>
+            <div class="nav-icon deative"><i class="far fa-save"></i></div>
+            <div class="nav-icon deative"><i class="far fa-images"></i></div>
+            
+            <form id="dimension-input">
+                <input class="dimension" id="canvas-width" type="text" placeholder="width(px)">
+                x
+                <input class="dimension" id="canvas-height" type="text" placeholder="height(px)">
+                <input class="btn-submit" type="submit" value="Submit">
+                <span class="nav-icon checked" id="submit-check"><i class="fas fa-check-circle"></i></span>
+            </form>
+
+            <div class="slidecontainer">
+                <span id="brush-size-value"></span>
+                <div id="brush-size-slider">
+                    <input type="range" min="1" max="50" value="25" class="slider" id="brushsize">
+                </div>
+            </div>
+
+            <div class="colour-picker">
+                <input type="color" id="primary-colour" name="pri-color" value="#1685a9">
+                <input type="color" id="secondary-colour" name="sec-color" value="#f2be45">
+            </div>
+
+
+        </div>
+
+    </nav>
+
+
+    <!-- Canvas -->
+    <div id="canvas-container">
+        <canvas
+          id="canvas-real"
+          class="canvas"
+          width="1138px"
+          height="640px"
+        ></canvas>
+        <canvas
+          id="canvas-draft"
+          class="canvas"
+          width="1138px"
+          height="640px"
+        ></canvas>
+      </div>
+      
+
+          <!-- Tools bar -->
+    <nav class="tools-bar">
+        <h1>Canvas</h1>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="drawing-line"><im src="./Images/doodle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-straight-line"><img src="./Images/diagonal-line.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-quadratic-curve"><img src="./Images/curved-line.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-bezier-curve"><img src="./Images/circumflex-accent.png" alt="" height="25px" ></div>
+        </div>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="drawing-rectangle"><img src="./Images/rectangle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-circle"><img src="./Images/circle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item"><img src="#" alt="" height="25px" ></div>
+            <div class="toolsbar-item"><img src="#" alt="" height="25px" ></div>
+        </div>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="insert-text"><img src="./Images/text.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="filter"><img src="./Images/filter.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="fill-bucket"><img src="./Images/paint-bucket.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="eraser"><img src="./Images/eraser.png" alt="" height="25px" ></div>
+        </div>
+
+        <div class="toolsbar-container canvas-background">
+        <label class="switch">
+            <input type="checkbox" id="grid-background">
+            <span class="toggleslider round"></span>
+          </label>
+        </div>
+        
+    </nav>
+
+        <!-- jQuery -->
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+      <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+      <!--Navbar functionality-->
+      <script src="./javascript/navbar/canvas-navbar.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/new-canvas.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/undo.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/redo.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/zoom-in.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/zoom-out.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/selection.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/save-file.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/gallery.js" type="text/javascript"></script>
+      <!--Toolsbar functionality-->
+      <script src="./javascript/toolsbar/canvas-toolsbar.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-line.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-straight-line.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-quadratic-curve.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-bezier-curve.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-rectangle.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-circle.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/insert-text.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/fill-bucket.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/eraser.js" type="text/javascript"></script>
+    
+
+</body>
+</html>

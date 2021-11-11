@@ -199,6 +199,7 @@ i{
   background-color: transparent;
 }
 
+
 #canvas-container {
   clear: both;
   height: 640px;
@@ -206,6 +207,8 @@ i{
   left: 180px;
   overflow: scroll;
 }
+
+
 
 .toolsbar-container {
   display: grid;
@@ -228,7 +231,7 @@ i{
     background-color:#656565;
     border-radius: 25%;
     padding: 8.5px;
-    filter: drop-shadow(3px 3px 5px rgb(34, 34, 34));
+    filter: drop-shadow(3px 3px 5px #222);
 }
 
 .toolsbar-item-style{
@@ -301,15 +304,3 @@ input:checked + .toggleslider:before {
 .toggleslider.round:before {
   border-radius: 50%;
 }
-
-/* pris added */
-/* selection change color */
-
-.toolsbar-item:hover{
-  background: white;
-}
-
-.toolsbar-item:active{
-  background: white;
-}
-

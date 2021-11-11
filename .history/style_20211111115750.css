@@ -199,6 +199,7 @@ i{
   background-color: transparent;
 }
 
+
 #canvas-container {
   clear: both;
   height: 640px;
@@ -303,13 +304,6 @@ input:checked + .toggleslider:before {
 }
 
 /* pris added */
+
 /* selection change color */
-
-.toolsbar-item:hover{
-  background: white;
-}
-
-.toolsbar-item:active{
-  background: white;
-}
 
