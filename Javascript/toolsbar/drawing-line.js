@@ -27,6 +27,7 @@ class DrawingLine extends PaintFunction {
       // Drawing the line here
       this.context.beginPath();
       this.context.moveTo(coord[0], coord[1]);
+      
     }
     // Clicking and removing your mouse
     onDragging(coord, event) {
@@ -35,14 +36,7 @@ class DrawingLine extends PaintFunction {
   
     onMouseMove() {}
     onMouseUp() {      
-      step++;
-      if (step < userhistory.length - 1) {
-          userhistory.length = step + 1
-      }
-      userhistory.push(canvasReal.toDataURL()); //當前影像存成 Base64 編碼的字串並放入陣列
-  console.log(step)
-  console.log(userhistory)
-  
+      push()
     }
     onMouseLeave() {}
     onMouseEnter() {}
