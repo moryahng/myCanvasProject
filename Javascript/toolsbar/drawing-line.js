@@ -36,7 +36,9 @@ class DrawingLine extends PaintFunction {
   
     onMouseMove() {}
     onMouseUp() {      
-      push()
+      push();
+      console.log("pushed")
+      console.log(step)
     }
     onMouseLeave() {}
     onMouseEnter() {}

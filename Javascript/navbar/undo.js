@@ -2,6 +2,7 @@ $("#undo-btn").click(function undo() {
     if (step > 0) {
 
     step--;
+    console.log(step);
     let canvaspic = new Image();
     canvaspic.src = userhistory[step];
     canvaspic.onload = function() {

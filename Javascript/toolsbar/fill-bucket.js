@@ -12,15 +12,25 @@ class FillBucket extends PaintFunction {
     var pixelStack = [coord];
     var canvasWidth = canvasReal.width;
     var canvasHeight = canvasReal.height;
-    console.log("canvasWidth: " + canvasWidth + "canvasHeight: "+ canvasHeight);
     var colorLayer = contextReal.getImageData(0, 0, canvasWidth, canvasHeight);
+    var colourinput = $("#primary-colour").val();
+    var targetRGB = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colourinput)
+    var targetR = parseInt(targetRGB[1], 16)
+    var targetG = parseInt(targetRGB[2], 16)
+    var targetB = parseInt(targetRGB[3], 16)
+    var targetRGBArray = [targetR, targetG, targetB]
+    var startRGB = contextReal.getImageData(coord[0] , coord[1] , 1 , 1);
+    var startR = startRGB.data[0]
+    var startG = startRGB.data[1]
+    var startB = startRGB.data[2]
+    var startRGBArray = [startR, targetG, targetB]
 
+    if(JSON.stringify(targetRGBArray) != JSON.stringify(startRGBArray)){
 
     while(pixelStack.length){
         var newPos = pixelStack.pop();
         var x = newPos[0];
         var y = newPos[1];
-        var startRBG = contextReal.getImageData(x , y , 1 , 1);
         //moving the pixelPos up 1 by 1 until different colours or border:
         var pixelPos = (y*canvasWidth + x) * 4;
         while(y-- >= 0 && matchStartColor(pixelPos)){
@@ -53,19 +63,20 @@ class FillBucket extends PaintFunction {
                 pixelPos += canvasWidth * 4;
             }
         }
-        context.putImageData(colorLayer, 0, 0);
+    }
+        contextReal.putImageData(colorLayer, 0, 0);
   
     function matchStartColor(pixelPos){
     var r = colorLayer.data[pixelPos];	
     var g = colorLayer.data[pixelPos+1];	
     var b = colorLayer.data[pixelPos+2];
-
     return (r == startR && g == startG && b == startB);}
 
+
     function colorPixel(pixelPos){
-    colorLayer.data[pixelPos] = 0;
-    colorLayer.data[pixelPos+1] = 0;
-    colorLayer.data[pixelPos+2] = 0;
+    colorLayer.data[pixelPos] = targetR;
+    colorLayer.data[pixelPos+1] = targetG;
+    colorLayer.data[pixelPos+2] = targetB;
     colorLayer.data[pixelPos+3] = 255;}
 }
     onDragging(coord, event) {}

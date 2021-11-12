@@ -2,6 +2,7 @@
 // gallery button
 $("#gallery-btn").click(function() {
     $(".modal").css("display","block");
+    $(".modal")
   })
   
 //close button

@@ -1,6 +1,7 @@
 $("#redo-btn").click(function redo() {
     if (step < userhistory.length - 1) {
     step++;
+    console.log(step);
     let canvaspic = new Image();
     canvaspic.src = userhistory[step];
     canvaspic.onload = function() {
