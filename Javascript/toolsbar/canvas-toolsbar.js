@@ -5,10 +5,10 @@ $(()=>{
         currentFunction = new DrawingLine(contextReal);});  
 
     $("#drawing-straight-line").click(() => {
-        currentFunction = new DrawingStriaght(contextReal);});  
+        currentFunction = new DrawingStriaght(contextReal, contextDraft);});  
     
     $("#drawing-quadratic-curve").click(() => {
-        currentFunction = new DrawingQuadratic(contextReal);});  
+        currentFunction = new DrawingQuadratic(contextReal, contextDraft);});  
     
     $("#drawing-bezier-curve").click(() => {
         currentFunction = new DrawingBezier(contextReal);});  

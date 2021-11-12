@@ -28,6 +28,7 @@ class DrawingCircle extends PaintFunction {
   
    
     onMouseUp(coord) {
+      push();
         this.contextDraft.clearRect(0,0, canvasDraft.width, canvasDraft.height);
             let pointX = coord[0] - this.origX;
             let pointY = coord[1] - this.origY;
