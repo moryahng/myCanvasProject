@@ -21,14 +21,20 @@
         </div>
         
         <div class="nav-items-container">
-            <div class="nav-icon"><i class="fas fa-plus"></i></div>
-            <div class="nav-icon"id="undo-btn"><i class="fas fa-undo-alt"></i></div>
-            <div class="nav-icon"><i class="fas fa-redo-alt"></i></div>
+            <div class="nav-icon" id="new-btn"><i class="fas fa-plus-square"></i></div>
+            <div class="nav-icon" id="undo-btn"><i class="fas fa-undo-alt"></i></div>
+            <div class="nav-icon" id="redo-btn"><i class="fas fa-redo-alt"></i></div>
             <div class="nav-icon"><i class="fas fa-search-plus"></i></div>
             <div class="nav-icon"><i class="fas fa-search-minus"></i></div>
             <div class="nav-icon deative"><i class="far fa-object-group"></i></div>
-            <div class="nav-icon deative"><i class="far fa-save" id="savef"></i></div>
-            <div class="nav-icon deative"><i class="far fa-images"></i></div>
+            <div class="nav-icon" id="savef"><i class="fas fa-download"></i></div>
+            <div class="nav-icon" id="gallery-btn"><i class="far fa-images"></i><!--<a href="./gallery.html"  
+            onclick="window.open('./gallery.html', 
+              'newwindow', 
+              'width=740px,height=660px'); 
+              return false;">
+            <i class="far fa-images"></i></a>--></div>
+            <div class="nav-icon" id="add-btn"><i class="far fa-save"></i></div>
             
             <form id="dimension-input">
                 <input class="dimension" id="canvas-width" type="text" placeholder="width(px)">
@@ -54,6 +60,99 @@
         </div>
 
     </nav>
+
+<!-- Gallery Modal-->
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+    <div class="gallery-container">
+        <div class="gallery-img-container" id="gallery-img-container-1">
+            <div class="gallery-img" id="gallery-img-1"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-1"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-1"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-2">
+            <div class="gallery-img" id="gallery-img-2"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-2"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-2"><i class="fas fa-trash-alt"></i></div>
+            </div>
+
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-3">
+            <div class="gallery-img" id="gallery-img-3"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-3"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-3"><i class="fas fa-trash-alt"></i></div>
+            </div>
+
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-4">
+            <div class="gallery-img" id="gallery-img-4"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-4"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-4"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-5">
+            <div class="gallery-img" id="gallery-img-5"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-5"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-5"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-6">
+            <div class="gallery-img" id="gallery-img-6"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-6"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-6"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-7">
+            <div class="gallery-img" id="gallery-img-7"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-7"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-7"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-8">
+            <div class="gallery-img" id="gallery-img-8"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-8"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-8"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-9">
+            <div class="gallery-img" id="gallery-img-9"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-9"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-9"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-10">
+            <div class="gallery-img" id="gallery-img-10"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-10"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-10"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-11">
+            <div class="gallery-img" id="gallery-img-11"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-11"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-11"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-12">
+            <div class="gallery-img" id="gallery-img-12"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-12"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-12"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <!-- Canvas -->

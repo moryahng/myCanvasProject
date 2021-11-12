@@ -11,12 +11,18 @@ class DrawingQuadratic extends PaintFunction {
       
 
       if (this.click === 0 ) {
-        this.contextReal.strokeStyle = "black";
+        this.contextDraft.strokeStyle = $("#primary-colour").val();
         this.origX = coord[0];
         this.origY = coord[1];
   
       } else {
-        this.contextDraft.strokeStyle = "black";
+        this.contextDraft.clearRect(
+            0,
+            0,
+      canvasDraft.width,
+      canvasDraft.height
+      );
+        this.contextDraft.strokeStyle = $("#primary-colour").val();
         this.ControlX = coord[0];
         this.ControlY = coord[1];
       }
@@ -24,7 +30,7 @@ class DrawingQuadratic extends PaintFunction {
   
     onDragging(coord, event) {
       // Manipulating the context draft
-      this.contextDraft.strokeStyle = "black";
+      this.contextDraft.strokeStyle = $("#primary-colour").val();
     if (this.click == 0) {
         this.contextDraft.clearRect(
             0,
@@ -53,6 +59,7 @@ class DrawingQuadratic extends PaintFunction {
       canvasDraft.width,
       canvasDraft.height
       );
+                
      
         this.contextDraft.beginPath();
         this.contextDraft.moveTo(this.origX, this.origY);
@@ -75,12 +82,19 @@ class DrawingQuadratic extends PaintFunction {
             this.origY 
           )
           this.contextDraft.lineTo(
-            coord[0],
-            coord[1]
+            this.endX,
+            this.endY
            );
            this.contextDraft.stroke();
            this.click ++;
       } else if (this.click===1) {
+        this.contextDraft.clearRect(
+            0,
+            0,
+      canvasDraft.width,
+      canvasDraft.height
+      );
+       
           this.click=0
           this.contextReal.beginPath();
           this.contextReal.moveTo(this.origX, this.origY);

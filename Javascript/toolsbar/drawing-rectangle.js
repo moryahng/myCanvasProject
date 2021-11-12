@@ -42,6 +42,7 @@ class DrawingRectangle extends PaintFunction {
 
   // Committing the element to the canvas
   onMouseUp(coord) {
+    
     // Clearing the rectangle first
     this.contextDraft.clearRect(
       0,
@@ -57,6 +58,8 @@ class DrawingRectangle extends PaintFunction {
       coord[0] - this.origX,
       coord[1] - this.origY
     );
+
+    push()
   }
   onMouseLeave() {}
   onMouseEnter() {}
