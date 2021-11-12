@@ -40,7 +40,8 @@ class DrawingStriaght extends PaintFunction {
     onMouseMove() {}
   
     onMouseUp(coord) {
-      
+      this.contextDraft.clearRect(0,0, canvasReal.width, canvasDraft.width);
+      this.contextReal.beginPath();
       this.contextReal.moveTo(
         this.origX ,
         this.origY 
