@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Canvas</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nav-bar">
+            <div id="description"> 
+            <label id="label-undo" for="undo">Undo</label>
+            <label id="label-redo"for="redo">Redo</label>
+            <label id="label-colour-fill" for="pri-color">Fill</label>
+            <label id="label-colour-border"for="sec-color">Border</label>
+
+        </div>
+        
+        <div class="nav-items-container">
+            <div class="nav-icon" id="new-btn"><i class="fas fa-plus-square"></i></div>
+            <div class="nav-icon" id="undo-btn"><i class="fas fa-undo-alt"></i></div>
+            <div class="nav-icon" id="redo-btn"><i class="fas fa-redo-alt"></i></div>
+            <div class="nav-icon"><i class="fas fa-search-plus"></i></div>
+            <div class="nav-icon"><i class="fas fa-search-minus"></i></div>
+            <div class="nav-icon deative"><i class="far fa-object-group"></i></div>
+            <div class="nav-icon" id="download-btn"><i class="fas fa-download"></i></div>
+            <div class="nav-icon" id="gallery-btn"><i class="far fa-images"></i><!--<a href="./gallery.html"  
+            onclick="window.open('./gallery.html', 
+              'newwindow', 
+              'width=740px,height=660px'); 
+              return false;">
+            <i class="far fa-images"></i></a>--></div>
+            <div class="nav-icon" id="add-btn"><i class="far fa-save"></i></div>
+            
+            <form id="dimension-input">
+                <input class="dimension" id="canvas-width" type="text" placeholder="width(px)">
+                x
+                <input class="dimension" id="canvas-height" type="text" placeholder="height(px)">
+                <input class="btn-submit" type="submit" value="Submit">
+                <span class="nav-icon checked" id="submit-check"><i class="fas fa-check-circle"></i></span>
+            </form>
+
+            <div class="slidecontainer">
+                <span id="brush-size-value"></span>
+                <div id="brush-size-slider">
+                    <input type="range" min="1" max="50" value="25" class="slider" id="brushsize">
+                </div>
+            </div>
+
+            <div class="colour-picker">
+                <input type="color" id="primary-colour" name="pri-color" value="#1685a9">
+                <input type="color" id="secondary-colour" name="sec-color" value="#f2be45">
+            </div>
+
+
+        </div>
+
+    </nav>
+
+<!-- Gallery Modal-->
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+    <div class="gallery-container">
+        <div class="gallery-img-container" id="gallery-img-container-1">
+            <div class="gallery-img" id="gallery-img-1"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-1"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-1"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-2">
+            <div class="gallery-img" id="gallery-img-2"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-2"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-2"><i class="fas fa-trash-alt"></i></div>
+            </div>
+
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-3">
+            <div class="gallery-img" id="gallery-img-3"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-3"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-3"><i class="fas fa-trash-alt"></i></div>
+            </div>
+
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-4">
+            <div class="gallery-img" id="gallery-img-4"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-4"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-4"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-5">
+            <div class="gallery-img" id="gallery-img-5"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-5"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-5"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-6">
+            <div class="gallery-img" id="gallery-img-6"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-6"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-6"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-7">
+            <div class="gallery-img" id="gallery-img-7"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-7"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-7"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-8">
+            <div class="gallery-img" id="gallery-img-8"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-8"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-8"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-9">
+            <div class="gallery-img" id="gallery-img-9"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-9"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-9"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-10">
+            <div class="gallery-img" id="gallery-img-10"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-10"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-10"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-11">
+            <div class="gallery-img" id="gallery-img-11"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-11"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-11"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+        <div class="gallery-img-container" id="gallery-img-container-12">
+            <div class="gallery-img" id="gallery-img-12"><img src="./Images/empty-img.jpeg"></div>
+            <div class="gallery-icon-container">
+                <div class="nav-icon view-gallery-img" id="view-img-12"><i class="fas fa-eye"></i></div>
+                <div class="nav-icon delete-gallery-img" id="delete-img-12"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Canvas -->
+    <div id="canvas-container">
+        <canvas
+          id="canvas-real"
+          class="canvas"
+          width="1138px"
+          height="640px"
+        ></canvas>
+        <canvas
+          id="canvas-draft"
+          class="canvas"
+          width="1138px"
+          height="640px"
+        ></canvas>
+      </div>
+      
+      <!-- pris added - Input Text -->
+      <input id="textInput" class="" placeholder="type here and press enter" name=>
+
+          <!-- Tools bar -->
+    <nav class="tools-bar">
+        <h1>Canvas</h1>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="drawing-line"><img src="./Images/doodle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-straight-line"><img src="./Images/diagonal-line.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-quadratic-curve"><img src="./Images/curved-line.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-bezier-curve"><img src="./Images/circumflex-accent.png" alt="" height="25px" ></div>
+        </div>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="drawing-rectangle"><img src="./Images/rectangle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="drawing-circle"><img src="./Images/circle.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item"><img src="#" alt="" height="25px" ></div>
+            <div class="toolsbar-item"><img src="#" alt="" height="25px" ></div>
+        </div>
+        <div class="toolsbar-container">
+            <div class="toolsbar-item" id="insert-text"><img src="./Images/text.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="filter"><img src="./Images/filter.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="fill-bucket"><img src="./Images/paint-bucket.png" alt="" height="25px" ></div>
+            <div class="toolsbar-item" id="eraser"><img src="./Images/eraser.png" alt="" height="25px" ></div>
+        </div>
+
+        <div class="toolsbar-container canvas-background">
+        <label class="switch">
+            <input type="checkbox" id="grid-background">
+            <span class="toggleslider round"></span>
+          </label>
+        </div>
+        
+    </nav>
+
+        <!-- jQuery -->
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+      <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+      <!--Navbar functionality-->
+      <script src="./javascript/navbar/canvas-navbar.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/new-canvas.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/undo.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/redo.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/zoom-in.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/zoom-out.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/selection.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/save-file.js" type="text/javascript"></script>
+      <script src="./javascript/navbar/gallery.js" type="text/javascript"></script>
+      <!--Toolsbar functionality-->
+      <script src="./javascript/toolsbar/canvas-toolsbar.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-line.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-straight-line.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-quadratic-curve.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-bezier-curve.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-rectangle.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/drawing-circle.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/insert-text.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/fill-bucket.js" type="text/javascript"></script>
+      <script src="./javascript/toolsbar/eraser.js" type="text/javascript"></script>
+    
+
+</body>
+</html>
