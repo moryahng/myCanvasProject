@@ -2,7 +2,6 @@ $("#undo-btn").click(function undo() {
     if (step > 0) {
 
     step--;
-    console.log(`undo step: ${step}`)
     let canvaspic = new Image();
     canvaspic.src = userhistory[step];
     canvaspic.onload = function() {
@@ -12,13 +11,12 @@ $("#undo-btn").click(function undo() {
     }
 
     })
-
+   
 document.addEventListener('keydown', function (event) {
   if (event.ctrlKey && event.key == 'z') {
     if (step > 0) {
 
       step--;
-      console.log(`undo step: ${step}`)
       let canvaspic = new Image();
       canvaspic.src = userhistory[step];
       canvaspic.onload = function() {
