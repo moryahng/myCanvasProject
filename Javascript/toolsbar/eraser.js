@@ -35,8 +35,6 @@
     onMouseUp() {
       this.context.globalCompositeOperation = 'source-over';
       push();
-      console.log("pushed");
-      console.log(step)
     }
     onMouseLeave() {}
     onMouseEnter() {}

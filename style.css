@@ -81,8 +81,9 @@ i{
 }
 
 #brush-size-value{
-      font-size: 8pt;
+      font-size: 12pt;
       display: block;
+      width: 20px;
 }
   
   /* The slider itself */
@@ -398,5 +399,57 @@ input:checked + .toggleslider:before {
   color: white;
   font-size: 20px;
   text-align: center;
+  display: none;
   
+}
+
+/* cursors */
+#drawing-rectangle {
+  cursor: url('Images/icons8-rectangle-64.png') 15 15, move;
+}
+
+#drawing-circle {
+  cursor: url('Images/icons8-circle-64.png') 15 15, move;
+}
+
+#drawing-line {
+  cursor: url('Images/icons8-pencil-drawing-64.png') 15 15, move;
+}
+
+#drawing-straight-line {
+  cursor: url('Images/icons8-vertical-line-64.png') 15 15, move;
+}
+
+#drawing-quadratic-curve {
+  cursor: url('Images/icons8-curved-arrow-256.png') 15 15, move;
+}
+
+#insert-text {
+  cursor: url('Images/icons8-text-64.png') 15 15, move;
+}
+
+#drawing-bezier-curve {
+  cursor: url('Images/icons8-squiggly-line-40.png') 15 15, move;
+}
+
+#fill-bucket {
+  cursor: url('Images/icons8-bucket-64.png') 15 15, move;
+}
+
+
+#eraser {
+  cursor: url('Images/icons8-eraser-64.png') 15 15, move;
+}
+
+.nav-icon {
+  cursor: pointer;
+}
+
+
+.deactive-item{
+  background-color: #222;
+}
+
+.deactive-item:hover{
+  background-color: #222;
 }
