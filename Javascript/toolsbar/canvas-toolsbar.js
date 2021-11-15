@@ -11,7 +11,7 @@ $(()=>{
         currentFunction = new DrawingQuadratic(contextReal, contextDraft);});  
     
     $("#drawing-bezier-curve").click(() => {
-        currentFunction = new DrawingBezier(contextReal);});  
+        currentFunction = new DrawingBezier(contextReal, contextDraft);});  
 
     $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);});

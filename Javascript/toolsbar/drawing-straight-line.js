@@ -51,6 +51,7 @@ class DrawingStriaght extends PaintFunction {
         coord[1]
        );
        this.contextReal.stroke();
+       push();
     }
     onMouseLeave() {}
     onMouseEnter() {}

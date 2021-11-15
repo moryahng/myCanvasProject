@@ -2,6 +2,7 @@
 // gallery button
 $("#gallery-btn").click(function() {
     $(".modal").css("display","block");
+    $(".modal")
   })
   
 //close button
@@ -17,7 +18,6 @@ gallery.push(gallerypic);
     if(gallery.length > 12){
         gallery.shift()}
     for (i = 0; i < gallery.length; i++){
-        console.log(gallery[i]);
         $(`#gallery-img-${i+1}`).html(gallery[i]);
     }
 })

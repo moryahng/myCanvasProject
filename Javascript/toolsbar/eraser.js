@@ -15,6 +15,7 @@
   
     // On mouse down, ensure that the pen has these features
     onMouseDown(coord, event) {
+
       // Fill in the color
       this.context.globalCompositeOperation = 'destination-out';
       // Kind of line
@@ -31,7 +32,10 @@
     }
   
     onMouseMove() {}
-    onMouseUp() {}
+    onMouseUp() {
+      this.context.globalCompositeOperation = 'source-over';
+      push();
+    }
     onMouseLeave() {}
     onMouseEnter() {}
   
